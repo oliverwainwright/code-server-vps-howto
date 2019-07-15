@@ -3,23 +3,23 @@
 ### this example uses amazon lightsail
 
 #### VPS Specs
-..* 4GB RAM
-..* 80GB HD
-..* Static public IPv4 Address
+* 4GB RAM
+* 80GB HD
+* Static public IPv4 Address
 
 #### Domain Name (optional)
-..* Register a domain name
-..* Configure your domain name to use your VPS provider's DNS servers
-..* This example uses mister.bombasticly.com
+* Register a domain name
+* Configure your domain name to use your VPS provider's DNS servers
+* This example uses mister.bombasticly.com
 
 #### Amazon Lightsail Ubuntu
 The userid is ubuntu
 
 #### SSH Access
-..* Create SSH Keys from Account Page in Amazon Lightsail
-..* Windows PuTTy users - Use PuttyGen to convert your private key (.pem) to PuTTy format (.ppk)
-..* Configure PuTTY to use your SSH key for authentication to your VPS
-..* Save PuTTY profile name as ubuntu@fully-qualified-domain-name (ex: ubuntu@mister.bombasticly.com)
+* Create SSH Keys from Account Page in Amazon Lightsail
+* Windows PuTTy users - Use PuttyGen to convert your private key (.pem) to PuTTy format (.ppk)
+* Configure PuTTY to use your SSH key for authentication to your VPS
+* Save PuTTY profile name as ubuntu@fully-qualified-domain-name (ex: ubuntu@mister.bombasticly.com)
 
 ### Console Access
 Amazon Lightsail also provides console access via your web browser if ssh access breaks
