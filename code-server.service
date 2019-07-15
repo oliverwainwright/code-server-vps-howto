@@ -1,0 +1,11 @@
+[Unit]
+Description = Code Server Service.
+
+[Service]
+User = ubuntu
+Type = simple
+ExecStart = /bin/bash /usr/local/sbin/code-server.sh
+
+[Install]
+WantedBy = multi-user.target
+
