@@ -25,21 +25,29 @@ The userid is ubuntu
 Amazon Lightsail also provides console access via your web browser if ssh access breaks
 
 ### Login to VPS
-```ssh ubuntu@mister.bombasticly.com```
+```
+ssh ubuntu@mister.bombasticly.com
+```
 
 ### Update software from Ubuntu
-```sudo apt update -y
-sudo apt upgrade -y```
+```
+sudo apt update -y
+sudo apt upgrade -y
+```
 
 ### Install docker and docker-compose
-```sudo apt install docker docker-compose -y```
+```
+sudo apt install docker docker-compose -y
+```
 
 ### code-server, web-based VS Code IDE
-..* Go to github and get the latest version of code-server, https://github.com/cdr/code-server
-..* As of 7/15/2019, the latest release is https://github.com/cdr/code-server/releases/tag/1.1156-vsc1.33.1
+* Go to github and get the latest version of code-server, https://github.com/cdr/code-server
+* As of 7/15/2019, the latest release is https://github.com/cdr/code-server/releases/tag/1.1156-vsc1.33.1
 
 ### Get the download URL for Linux
-```https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz```
+```
+https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz
+```
 
 ### Download code-server to /home/ubuntu (ubuntu's home directory)
 ```wget https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz```
