@@ -61,12 +61,15 @@ sudo tar xvzf /home/ubuntu/code-server1.1156-vsc1.33.1-linux-x64.tar.gz
 sudo ln -s code-server1.1156-vsc1.33.1-linux-x64  code-server
 ```
 
-### Setup code-server startup script and make it executable
+### Setup code-server startup script
 ```
 cd /usr/local/sbin
 sudo vi code-server.sh
 
 /opt/code-server/code-server /home/ubuntu/projects --cert=/usr/local/etc/code-server/certs/mrbombasticly.crt --cert-key=/usr/local/etc/code-server/private/mrbombasticly.key -d /opt/code-server
+```
+### Make code-server startup script executable
+```
 sudo chmod 755 code-server.sh
 ```
 
