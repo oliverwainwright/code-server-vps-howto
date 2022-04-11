@@ -10,7 +10,7 @@
 #### Domain Name (optional)
 * Register a domain name
 * Configure your domain name to use your VPS provider's DNS servers
-* This example uses mister.bombasticly.com
+* This example uses ${SERVER}
 
 #### Amazon Lightsail Ubuntu
 The userid is ubuntu
@@ -19,14 +19,14 @@ The userid is ubuntu
 * Create SSH Keys from Account Page in Amazon Lightsail
 * Windows PuTTy users - Use PuttyGen to convert your private key (.pem) to PuTTy format (.ppk)
 * Configure PuTTY to use your SSH key for authentication to your VPS
-* Save PuTTY profile name as ubuntu@fully-qualified-domain-name (ex: ubuntu@mister.bombasticly.com)
+* Save PuTTY profile name as ubuntu@fully-qualified-domain-name (ex: ubuntu@foo.server.com)
 
 ### Console Access
 Amazon Lightsail also provides console access via your web browser if ssh access breaks
 
 ### Login to VPS
 ```
-ssh ubuntu@mister.bombasticly.com
+ssh ubuntu@${SERVER}
 ```
 
 ### Update software from Ubuntu
@@ -66,7 +66,7 @@ sudo ln -s code-server1.1156-vsc1.33.1-linux-x64  code-server
 cd /usr/local/sbin
 sudo vi code-server.sh
 
-/opt/code-server/code-server /home/ubuntu/projects --cert=/usr/local/etc/code-server/certs/mrbombasticly.crt --cert-key=/usr/local/etc/code-server/private/mrbombasticly.key -d /opt/code-server
+/opt/code-server/code-server /home/ubuntu/projects --cert=/usr/local/etc/code-server/certs/${SERVER}.crt --cert-key=/usr/local/etc/code-server/private/${SERVER}.key -d /opt/code-server
 ```
 ### Make code-server startup script executable
 ```
@@ -80,7 +80,7 @@ sudo mkdir -p /usr/local/etc/code-server/{certs,private}
 
 ### Generate a self-signed SSL cert (follow prompts)
 ```
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /usr/local/etc/code-server/private/mrbombasticly.key -out /usr/local/.etc/code-server/certs/mrbombasticly.crt
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /usr/local/etc/code-server/private/${SERVER}.key -out /usr/local/.etc/code-server/certs/${SERVER}.crt
 ```
 
 ### Change permsission to give ubuntu ownership of keys/cert - you will run code-server as user ubuntu
@@ -127,7 +127,7 @@ sudo systemctl status code-server
 
 Jul 15 03:35:47 mister.bombasticly.com bash[2406]: INFO  Starting webserver... {"host":"0.0.0.0","port":8
 Jul 15 03:35:47 mister.bombasticly.com bash[2406]: INFO
-Jul 15 03:35:47 mister.bombasticly.com bash[2406]: INFO  Password: d5d4f0541f07d63ab185513e
+Jul 15 03:35:47 mister.bombasticly.com bash[2406]: INFO  Password: d5d49F541f07d63jb202213e
 Jul 15 03:35:47 mister.bombasticly.com bash[2406]: INFO
 Jul 15 03:35:47 mister.bombasticly.com bash[2406]: INFO  Started (click the link below to open):
 Jul 15 03:35:47 mister.bombasticly.com bash[2406]: INFO  https://localhost:8443/
@@ -142,7 +142,7 @@ Jul 15 03:35:48 mister.bombasticly.com bash[2406]: INFO  Connected to shared pro
 sudo systemctl enable code-server
 ```
 
-### From your web-browser access the code-server URL, ex: **https://mister.bombasticaly.com:8443**
+### From your web-browser access the code-server URL, ex: **https://${SERVER}.com:8443**
 * code-server uses a self-signed SSL certificate that may prompt your browser to ask you some additional questions before you proceed
 * When prompted for the password, cut it from your **'sudo systemctl status code-server'** output and paste it in your web browser
 * You should now be logged in to your web IDE and in your projects directory
